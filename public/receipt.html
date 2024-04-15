@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Receipt</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-size: 1rem;
+            line-height: 1.65;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #fff 50%, #fff 50%);
+            color: #000;
+        }
+
+        /*Main Styles*/
+
+        .uc__wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h1 {
+            left: 50%;
+        }
+
+        .uc__details {
+            flex-basis: 50%;
+            display: flex;
+            flex-direction: column;
+            padding: 0 4rem;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .uc__art {
+            flex-basis: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .uc__art img {
+            width: 70%;
+            align-items: center;
+            right: 50%;
+        }
+
+        .title {
+            display: inline-block;
+            font-size: 30px;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background-color: #fff;
+            width: 140px;
+        }
+
+        .intro {
+            font-size: 15px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .text {
+            position: relative;
+            left: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="uc__wrapper">
+        <div class="uc__details">
+            <h1 class="title">Thank you for reaching out</h1>
+            <div class="text">
+                <h3 class="intro">
+                    We'll be in touch as soon as possible.
+                </h3>
+            </div>
+
+            <div class="uc__art">
+                <img src="/images/undraw_business_deal_re_up4u.svg" alt="">
+            </div>
+        </div>
+</body>
+
+</html>
