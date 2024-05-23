@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: relative;
+            min-height: 100vh;
+            background: #ddd;
+        }
+
+
+        a {
+            position: relative;
+            left: 5%;
+            text-decoration: none;
+            color: #000;
+            width: 100px;
+            text-decoration: none;
+            margin: auto;
+            color: #000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+        }
+
+        .future {
+            font-size: 20px;
+        }
+
+        .future:hover {
+            background-color: #ddd;
+            color: red;
+        }
+
+
+        .container h1 {
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            padding: 15px;
+            color: #333;
+            text-align: center;
+            transform: capitalize;
+        }
+
+        .container .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .container .image-container .image {
+            height: 250px;
+            width: 350px;
+            border: 10px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .container .image-container .image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: .2s linear;
+        }
+
+        .container .image-container .image:hover img {
+            transform: scale(1.1);
+        }
+
+        .container .popup-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .9);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+            display: none;
+        }
+
+        .container .popup-image span {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 60px;
+            font-weight: bolder;
+            color: #fff;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .container .popup-image img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid #fff;
+            border-radius: 5px;
+            width: 750px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .container .popup-image img {
+                width: 95%;
+            }
+            a {
+                font-weight: 200;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a class="future" href="/public/home.html">Home &#127968;</a>
+        <h1>gallery</h1>
+        <div class="image-container">
+            <div class="image"><img
+                    src="/public/images/GI1.jpeg">
+            </div>
+            <div class="image"><img
+                    src="/public/images/GI2.jpeg">
+            </div>
+            <div class="image"><img
+                    src="/public/images/GI3.jpeg">
+            </div>
+            <div class="image"><img
+                    src="/public/images/GI4.jpeg">
+            </div>
+            <div class="image"><img
+                    src="/public/images/GI5.jpeg">
+            </div>
+            <div class="image"><img
+                    src="/public/images/GI6.jpeg">
+            </div>
+             <div class="image"><img
+                    src="/public/images/GI7.jpeg">
+            </div>
+        </div>
+        <div class="popup-image">
+            <span>&times;</span>
+            <img src="">
+        </div>
+    </div>
+
+    <script>
+
+        document.querySelectorAll(".image-container img").forEach(Image => {
+            Image.onclick = () => {
+                console.log("Image clicked:", Image);
+                document.querySelector(".popup-image").style.display = 'block';
+                const imageUrl = Image.getAttribute('src');
+                console.log("Image URL:", imageUrl);
+                document.querySelector(".popup-image img").src = imageUrl;
+            }
+        });
+
+        document.querySelector(".popup-image span").onclick = () => {
+            console.log("Close button clicked");
+            document.querySelector(".popup-image").style.display = 'none';
+        }
+
+
+    </script>
+</body>
+
+</html>

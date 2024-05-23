@@ -24,6 +24,28 @@
             margin: 0 auto;
         }
 
+        a {
+            position: relative;
+            right: 90%;
+            text-decoration: none;
+            color: #000;
+            width: 100px;
+            text-decoration: none;
+            margin: auto;
+            color: #000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+        }
+
+        .future {
+            font-size: 20px;
+        }
+
+        .future:hover {
+            background-color: #e8f0fe;
+            color: red;
+        }
+
         .container h2 {
             font-size: 36px;
             margin-bottom: 40px;
@@ -35,6 +57,7 @@
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 30px;
         }
+
 
         .contact-form {
             text-align: left;
@@ -112,12 +135,18 @@
             .contact-wrapper {
                 grid-template-columns: 1fr;
             }
+
+            a {
+                position: relative;
+                left: 3%;
+            }
         }
     </style>
 
     <body>
         <section class="contact">
             <div class="container">
+                <a class="future" href="/public/home.html">Home &#127968;</a>
                 <h2>Join Us</h2>
                 <div class="contact-wrapper">
                     <div class="contact-form">
