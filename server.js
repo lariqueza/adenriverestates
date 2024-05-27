@@ -40,7 +40,7 @@ app.use(cors({
 
 //requests and routes
 //home page
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
     res.sendFile('./public/home.html', { root: __dirname });
 })
 
