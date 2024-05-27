@@ -92,7 +92,7 @@ app.post('/emailList', async (req, res) => {
         const { fullName, email, message } = req.body;
 
         //validate user input
-        if(!fullName && email && message) {
+        if(!fullName && !email && !message) {
             return res.status(400).send('all input required')
         
         } else {
