@@ -9,7 +9,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 
-const PORT = 800;
+const PORT = process.env.PORT || 800;
 
 //initalise express app
 const app = express();
@@ -40,7 +40,7 @@ app.use(cors({
 
 //requests and routes
 //home page
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile('./public/home.html', { root: __dirname });
 })
 
