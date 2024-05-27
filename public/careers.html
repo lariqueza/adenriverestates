@@ -180,19 +180,20 @@
                         userEnquiry.addEventListener('click', async (e) => {
                             e.preventDefault();
 
-                            const fullName = document.getElementById("name").value;
-                            const email = document.getElementById("email").value;
-                            const message = document.getElementById("message").value;
+                            const userName = document.getElementById("name").value;
+                            const userEmail = document.getElementById("email").value;
+                            const subject = document.getElementById("subject").value;
+                            const userMessage = document.getElementById("message").value;
 
                             let fetchData = {
                                 method: "POST",
-                                body: JSON.stringify({ fullName, email, message }),
+                                body: JSON.stringify({ userName, userEmail, subject, userMessage }),
                                 headers: { "Content-Type": "application/json" }
                             };
 
                             try {
-                                const res = await fetch('/emailList', fetchData);
-                                if (!res.ok || !fullName || !email || !message) {
+                                const res = await fetch('/careersList', fetchData);
+                                if (!res.ok || !userName || !userEmail || !subject || !userMessage) {
                                     throw new Error('Error occurred while submitting the form.');
                                 } else {
                                     alert('Success');

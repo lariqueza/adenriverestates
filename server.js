@@ -128,12 +128,12 @@ app.post('/emailList', async (req, res) => {
 })
 
 //careers email server
-app.post('/emailList', async (req, res) => {
+app.post('/careersList', async (req, res) => {
     try {
-        const { Username, Useremail, subject, Usermessage } = req.body;
+        const { userName, userEmail, subject, userMessage } = req.body;
 
         //validate user input
-        if(!Useremail && Useremailemail && subject && Usermessage) {
+        if(!userName && !userEmail && !subject && !userMessage) {
             return res.status(400).send('all input required')
         
         } else {
@@ -148,10 +148,10 @@ app.post('/emailList', async (req, res) => {
         });
 
         const mailOptions = {
-            from: Username,
-            to: Useremail,
+            from: userName,
+            to: userEmail,
             subject: subject,
-            text: Usermessage
+            text: userMessage
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
